@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hellenic Open Data — Ψηφιακό Ευρετήριο</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Hellenic Open Data</div>
+      <nav class="nav">
+        <a href="#about">Σχετικά</a>
+        <a href="#sources">Πηγές</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner container">
+        <h1>Το Ψηφιακό Ευρετήριο της Αρχαίας Ελληνικής</h1>
+        <p class="subtitle">Αναζητήστε ταυτόχρονα σε ανοιχτά λεξικά, αρχαία κείμενα και γραμματικά εργαλεία.</p>
+
+        <form id="search-form" class="search-bar" role="search">
+          <label for="search-input" class="visually-hidden">Αναζήτηση</label>
+          <input id="search-input" type="search" placeholder="Πληκτρολογήστε λέξη ή φράση..." aria-label="Αναζήτηση" />
+          <button type="submit" class="btn primary">Αναζήτηση</button>
+        </form>
+
+        <div class="category-grid" aria-label="Κατηγορίες εργαλείων">
+          <div class="card category-card" data-category="Λεξικά">
+            <h3>Λεξικά</h3>
+            <p>Συλλογή λεξικών και σημασιολογικών πηγών.</p>
+          </div>
+          <div class="card category-card" data-category="Κείμενα">
+            <h3>Αρχαία Κείμενα</h3>
+            <p>Δοκίμια, επιγραφές και λογοτεχνικά έργα.</p>
+          </div>
+          <div class="card category-card" data-category="Γραμματική">
+            <h3>Γραμματική &amp; Συντακτικό</h3>
+            <p>Οδηγοί, πίνακες και εργαλεία ανάλυσης.</p>
+          </div>
+          <div class="card category-card" data-category="Πολυτονιστές">
+            <h3>Πολυτονιστές</h3>
+            <p>Εργαλεία για πολυτονική αποτύπωση.</p>
+          </div>
+        </div>
+
+        <section id="results-section">
+          <div class="results-top">
+            <h2>Αποτελέσματα</h2>
+            <p class="results-meta">Φιλτράρετε τα εργαλεία με βάση τίτλο, περιγραφή ή ετικέτες. Κάντε κλικ σε μια κατηγορία για να περιορίσετε τα αποτελέσματα.</p>
+          </div>
+          <div id="results-container" class="result-grid"></div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
