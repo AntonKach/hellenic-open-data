@@ -1,5 +1,6 @@
 let resources = [];
 let activeCategory = null;
+let resourcesLoaded = false;
 
 async function loadResources() {
   try {
@@ -8,6 +9,7 @@ async function loadResources() {
       throw new Error(`HTTP ${response.status}`);
     }
     resources = await response.json();
+    resourcesLoaded = true;
     renderResources(resources);
   } catch (error) {
     console.error('Failed to load resources:', error);
@@ -78,6 +80,10 @@ function renderResources(data) {
 }
 
 function filterResources() {
+  if (!resourcesLoaded) {
+    return;
+  }
+
   const searchValue = normalizeText(document.getElementById('search-input').value.trim());
 
   const filtered = resources.filter(resource => {
@@ -93,12 +99,18 @@ function filterResources() {
   renderResources(filtered);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
   const form = document.getElementById('search-form');
   const input = document.getElementById('search-input');
   const categoryCards = document.querySelectorAll('.category-card');
 
-  loadResources();
+  input.disabled = true;
+  input.placeholder = 'Φόρτωση δεδομένων...';
+
+  await loadResources();
+
+  input.disabled = false;
+  input.placeholder = 'Πληκτρολογήστε λέξη ή φράση...';
 
   input.addEventListener('input', filterResources);
 
