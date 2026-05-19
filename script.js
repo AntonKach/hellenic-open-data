@@ -1,47 +1,19 @@
-const resources = [
-  {
-    id: 'logeion',
-    title: 'Logeion',
-    description: 'Υψηλής ποιότητας λεξικό και πρόσβαση σε λεξικά αρχαίων ελληνικών.',
-    url: 'https://logeion.uchicago.edu/',
-    category: 'Λεξικά',
-    tags: ['λεξικό', 'ancient greek', 'λεξικο']
-  },
-  {
-    id: 'perseus',
-    title: 'Perseus Digital Library',
-    description: 'Μεγάλη συλλογή αρχαίων κειμένων και μεταφράσεων με αναλυτικά σχόλια.',
-    url: 'http://www.perseus.tufts.edu/',
-    category: 'Κείμενα',
-    tags: ['κείμενα', 'classics', 'πηγές', 'ανάλυση']
-  },
-  {
-    id: 'alpheios',
-    title: 'Alpheios',
-    description: 'Εργαλεία γλωσσικής ανάλυσης και γραμματική για αρχαία ελληνικά.',
-    url: 'https://alpheios.net/',
-    category: 'Γραμματική',
-    tags: ['γραμματική', 'σύνταξη', 'ανάλυση']
-  },
-  {
-    id: 'polytonic-converter',
-    title: 'Greek Polytonic Converter',
-    description: 'Μετατροπέας μονής όψης σε πολυτονικό ελληνικό κείμενο με άμεση προεπισκόπηση.',
-    url: 'https://www.lexilogos.com/keyboard/greek_polytonic.htm',
-    category: 'Πολυτονιστές',
-    tags: ['πολυτονικό', 'γράμμα', 'συμβολοσειρά']
-  },
-  {
-    id: 'dickinson',
-    title: 'Dickinson College Commentaries',
-    description: 'Οδηγός σε αντιγραφικά και αρχαία ελληνικά κείμενα με λεξικά και συντάξεις.',
-    url: 'https://dcc.dickinson.edu/',
-    category: 'Κείμενα',
-    tags: ['χειρόγραφα', 'κειμενα', 'λεξικό']
-  }
-];
-
+let resources = [];
 let activeCategory = null;
+
+async function loadResources() {
+  try {
+    const response = await fetch('data.json');
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    resources = await response.json();
+    renderResources(resources);
+  } catch (error) {
+    console.error('Failed to load resources:', error);
+    showToast('Σφάλμα κατά τη φόρτωση των δεδομένων. Παρακαλώ δοκιμάστε ξανά αργότερα.');
+  }
+}
 
 function normalizeText(value) {
   return String(value).toLowerCase();
@@ -126,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const input = document.getElementById('search-input');
   const categoryCards = document.querySelectorAll('.category-card');
 
-  renderResources(resources);
+  loadResources();
 
   input.addEventListener('input', filterResources);
 
