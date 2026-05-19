@@ -1,42 +1,42 @@
 [
   {
-    "id": "logeion",
+    "id": "1",
     "title": "Logeion",
-    "description": "Υψηλής ποιότητας λεξικό και πρόσβαση σε λεξικά αρχαίων ελληνικών.",
+    "description": "Η κορυφαία πύλη για λεξικά (LSJ, Middle Liddell, κ.α.).",
     "url": "https://logeion.uchicago.edu/",
     "category": "Λεξικά",
-    "tags": ["λεξικό", "ancient greek", "λεξικο"]
+    "tags": ["λεξικό", "LSJ", "αναζήτηση"]
   },
   {
-    "id": "perseus",
+    "id": "2",
     "title": "Perseus Digital Library",
-    "description": "Μεγάλη συλλογή αρχαίων κειμένων και μεταφράσεων με αναλυτικά σχόλια.",
-    "url": "http://www.perseus.tufts.edu/",
-    "category": "Κείμενα",
-    "tags": ["κείμενα", "classics", "πηγές", "ανάλυση"]
+    "description": "Η μεγαλύτερη ψηφιακή βιβλιοθήκη αρχαίων κειμένων.",
+    "url": "https://www.perseus.tufts.edu/hopper/",
+    "category": "Αρχαία Κείμενα",
+    "tags": ["κείμενα", "βιβλιοθήκη", "ερευνητικό"]
   },
   {
-    "id": "alpheios",
+    "id": "3",
     "title": "Alpheios",
-    "description": "Εργαλεία γλωσσικής ανάλυσης και γραμματική για αρχαία ελληνικά.",
+    "description": "Εργαλείο ανάλυσης γραμματικής και μορφολογίας.",
     "url": "https://alpheios.net/",
-    "category": "Γραμματική",
-    "tags": ["γραμματική", "σύνταξη", "ανάλυση"]
+    "category": "Γραμματική & Συντακτικό",
+    "tags": ["γραμματική", "ανάλυση", "morphology"]
   },
   {
-    "id": "polytonic-converter",
+    "id": "4",
+    "title": "First1KGreek",
+    "description": "Συλλογή κειμένων υψηλής ποιότητας (Open Greek and Latin).",
+    "url": "https://opengreekandlatin.github.io/First1KGreek/",
+    "category": "Αρχαία Κείμενα",
+    "tags": ["κείμενα", "open-access"]
+  },
+  {
+    "id": "5",
     "title": "Greek Polytonic Converter",
-    "description": "Μετατροπέας μονής όψης σε πολυτονικό ελληνικό κείμενο με άμεση προεπισκόπηση.",
-    "url": "https://www.lexilogos.com/keyboard/greek_polytonic.htm",
+    "description": "Μετατροπή κειμένου σε πολυτονικό με βάση τους κανόνες.",
+    "url": "https://www.polytoniko.org/",
     "category": "Πολυτονιστές",
-    "tags": ["πολυτονικό", "γράμμα", "συμβολοσειρά"]
-  },
-  {
-    "id": "dickinson",
-    "title": "Dickinson College Commentaries",
-    "description": "Οδηγός σε αντιγραφικά και αρχαία ελληνικά κείμενα με λεξικά και συντάξεις.",
-    "url": "https://dcc.dickinson.edu/",
-    "category": "Κείμενα",
-    "tags": ["χειρόγραφα", "κειμενα", "λεξικό"]
+    "tags": ["πολυτονικό", "γραφφή", "εργαλείο"]
   }
 ]
